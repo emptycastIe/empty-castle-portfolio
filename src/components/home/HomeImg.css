@@ -1,0 +1,83 @@
+.home__img {
+  position: relative;
+
+  background-image: url(./img/castle_05.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 30rem;
+  height: 30rem;
+  border-radius: 50%;
+  box-shadow: 0 5rem 6rem rgba(165, 216, 255, 0.7);
+  /* order: 1; */
+  justify-self: center;
+  align-self: center;
+  margin-top: 2vh;
+}
+
+.little-circle-purple {
+  position: absolute;
+  top: -20%;
+  left: 20%;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+  background: linear-gradient(
+    -25deg,
+    var(--purple-color-light),
+    var(--purple-color-light) 49.5%,
+    var(--white-color) 49.5%,
+    var(--purple-color) 50.5%
+  );
+}
+
+.little-circle-yellow {
+  position: absolute;
+  bottom: 35%;
+  right: -30%;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+  background: linear-gradient(
+    100deg,
+    var(--yellow-color-light),
+    var(--yellow-color-light) 49.5%,
+    var(--white-color) 49.5%,
+    var(--yellow-color) 50.5%
+  );
+}
+
+.little-circle-red {
+  position: absolute;
+  bottom: -5%;
+  left: -5%;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+  background: linear-gradient(
+    -135deg,
+    var(--pink-color-light),
+    var(--pink-color-light) 49.5%,
+    var(--white-color) 49.5%,
+    var(--red-color) 50.5%
+  );
+}
+
+/*******  FLYING EFFECT *******/
+
+.flying {
+    position: relative;
+  animation: flying 1s ease-in-out infinite alternate;
+}
+
+@keyframes flying {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-2.4rem);
+  }
+}

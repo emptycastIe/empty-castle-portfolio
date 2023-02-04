@@ -1,0 +1,236 @@
+.header {
+  width: 100%;
+  position: fixed;
+  top: 3%;
+  left: 0;
+  z-index: var(--z-index-1000);
+  background-color: var(--white-color);
+}
+
+.nav {
+  height: calc(var(--header-height) + 1.5rem);
+
+  display: grid;
+  grid-template-columns: 3fr 6fr 4fr;
+  align-items: center;
+  position: relative;
+}
+
+.nav .nav__menu {
+    /* align-self: flex-end; */
+    justify-self: center;
+}
+
+.nav__logo {
+    overflow: hidden;
+}
+
+.logo__img {
+    width: 70%;
+}
+
+.nav__toggle {
+  color: var(--black-color-dark);
+  font-size: var(--big-font-size);
+}
+
+.nav__list {
+  display: flex;
+  column-gap: 6.4rem;
+  align-items: center;
+}
+
+.nav__list__item {
+  position: relative;
+  text-align: center;
+}
+
+.nav__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: var(--small-font-size);
+  color: var(--black-color-light);
+  font-weight: var(--font-500);
+  transition: all 0.3s;
+}
+
+.nav__icon,
+.nav__close,
+.nav__toggle {
+  display: none;
+}
+
+.underlined {
+  display: inline-block;
+  position: relative;
+}
+
+.underlined::after {
+  background: none repeat scroll 0 0 transparent;
+  content: "";
+  display: block;
+  width: 0;
+  height: 3px;
+  left: 0%;
+  bottom: 0;
+  position: absolute;
+  background: var(--black-color-dark);
+  transition: width 0.3s ease;
+}
+
+.nav__logo .underlined::after {
+  background: none repeat scroll 0 0 transparent;
+  content: "";
+  display: block;
+  width: 0;
+  height: 3px;
+  left: 0;
+  bottom: 0;
+  position: absolute;
+  background: var(--black-color-dark);
+  transition: width 0.3s ease;
+}
+
+.underlined:hover:after {
+  width: 100%;
+  left: 100;
+}
+
+
+/* CONTACT */
+.contact {
+    padding: .75rem 1.5rem;
+    border: 1px solid var(--black-color-light);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 3px;
+    transition: all .3s;
+}
+
+.contact:hover,
+.contact:active {
+    border: 1px solid var(--black-color-dark);
+}
+
+/********** LINKS **********/
+.active-link:hover,
+.nav__link:hover {
+  color: var(--black-color-dark);
+}
+
+/********** BREAKPOINTS *********/
+@media screen and (max-width: 1136px) {
+    .nav__list {
+        column-gap: 4rem;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .nav__list {
+        column-gap: 2.2rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .header {
+        top: 0;
+        bottom:initial;
+    }
+
+    .nav {
+        height: var(--header-height);
+    }
+
+    .nav .nav__logo {
+        justify-self: start;
+    }
+
+    .nav .nav__toggle{
+        justify-self: end;
+    }
+
+    .nav__menu {
+        position: fixed;
+        top: -100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--white-color);
+        padding: 6rem 4rem;
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.3);
+        border-radius: 1.5rem;
+        transition: all 0.3s;
+    }
+
+    /********** DISPLAYING MENU BAR ***********/
+    .show-menu {
+        top: 0;
+    }
+
+    .nav {
+        height: 10rem;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .nav__list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 4rem;
+        column-gap: 0;
+    }
+
+    .nav__link {
+        display: grid;
+        row-gap: .8rem;
+        color: var(--black-color-dark);
+        font-size: var(--normal-small-font-size);
+    }
+    
+    .nav__icon {
+        font-size: var(--normal-font-size);
+    }
+
+    .nav__close {
+        position: absolute;
+        right: 1.3rem;
+        top: 1.3rem;
+        font-size: var(--big-font-size);
+        color: var(--black-color-dark);
+        cursor: pointer;
+    }
+
+    .nav__toggle {
+        left: 100%;
+        cursor: pointer;
+    }
+
+    .nav__icon,
+    .nav__close,
+    .nav__toggle {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .nav__link {
+        font-size: var(--small-font-size);
+    }
+
+    .nav__toggle {
+        font-size: var(--normal-font-size);
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .nav__link {
+        font-size: var(--small-font-size);
+    }
+    
+    .nav__menu {
+        padding: 6rem 2rem 5rem;
+    }
+
+    .nav__close {
+        font-size: 3.6rem;
+    }
+}
