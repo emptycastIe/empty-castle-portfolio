@@ -1,0 +1,47 @@
+.home__scroll {
+  margin-top: 7.5vh;
+  text-align: center;
+
+  &_button {
+    position: relative;
+    margin: auto;
+    padding: 1.5rem 2rem;
+    transition: all 0.3s ease;
+    color: var(--black-color-dark);
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      border-radius: 3rem;
+      background: var(--pink-color);
+      opacity: 0.8;
+      width: 5.5rem;
+      height: 4.7rem;
+      transition: all 0.3s ease;
+    }
+
+    & span {
+      position: relative;
+      font-size: var(--small-font-size);
+      line-height: 1.8rem;
+      font-weight: var(--font-700);
+      letter-spacing: 0.15rem;
+
+      & i {
+        vertical-align: middle;
+      }
+    }
+
+    &:hover::before {
+      width: 100%;
+      background: var(--pink-color);
+    }
+
+    &:active {
+      transform: scale(0.96);
+    }
+  }
+}

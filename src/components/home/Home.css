@@ -1,0 +1,5 @@
+.home__container {
+    column-gap: 5vw;
+    margin: 10vh 0;
+    grid-template-columns: 2fr 3fr;
+}

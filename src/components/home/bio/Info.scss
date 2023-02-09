@@ -1,0 +1,35 @@
+.home__info {
+  margin-left: 5vw;
+}
+
+.home__description {
+  max-width: 50rem;
+  line-height: 1.5;
+  text-align: start;
+  color: var(--black-color-light);
+  margin-bottom: 1.5vh;
+
+  & span {
+    font-weight: var(--font-800);
+    color: var(--black-color-dark);
+  }
+}
+
+.button--talk {
+  background: var(--black-color-dark);
+  box-shadow: 1rem 1.5rem 3rem rgba(0, 0, 0, 0.3);
+
+  align-self: start;
+  transition: all 0.3s ease;
+
+  &talk:hover {
+    background: var(--white-color);
+    color: var(--black-color-dark);
+    transform: translateY(-2.5px);
+    outline: 1px solid var(--black-color-dark);
+  }
+
+  &talk:active {
+    transform: translateY(1px);
+  }
+}
