@@ -1,0 +1,55 @@
+.flex--gap {
+  justify-content: start;
+  gap: 2rem;
+}
+
+.home__subtitle {
+  display: inline-block;
+  font-size: var(--smaller-font-size);
+  border-radius: 10px;
+  padding: 1rem 2.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 1rem 1.5rem 3rem rgba(0, 0, 0, 0.3);
+  margin-bottom: 1.5vh;
+
+  overflow: hidden;
+  
+  &:hover {
+    transform: translateY(-2.5px);
+  }
+  
+  &:active {
+    transform: translateY(1px);
+  }
+  
+  &-developer {
+    background: var(--blue-color);
+    color: var(--white-color);
+  }
+  
+  &-designer {
+    background: var(--yellow-color);
+  }
+}
+
+@media screen and (max-width:768px) {
+  .home__subtitle {
+    font-size: 1.8rem;
+
+    &:hover {
+      transform: none;
+    }
+    
+    &:active {
+      transform: none;
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .flex--gap {
+    justify-content: center;
+    gap: 2rem;
+  }
+}

@@ -1,0 +1,266 @@
+.header {
+  width: 100%;
+  padding: 1rem 0 3rem 0;
+  left: 0;
+  position: fixed;
+  background-color: var(--white-color);
+  z-index: var(--z-index-100);
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.3);
+}
+
+.nav {
+  height: calc(var(--header-height) + 1.5rem);
+
+  display: grid;
+  grid-template-columns: 3fr 6fr 4fr;
+  align-items: center;
+  position: relative;
+
+  & .nav__menu {
+    justify-self: center;
+  }
+
+  &__logo {
+    font-size: var(--big-font-size);
+    font-weight: var(--font-800);
+
+    &:link,
+    &:visited {
+      color: var(--black-color-dark);
+    }
+
+    & .underlined::after {
+      background: none repeat scroll 0 0 transparent;
+      content: "";
+      display: block;
+      width: 0;
+      height: 3px;
+      left: 0;
+      bottom: 0;
+      position: absolute;
+      background: var(--black-color-dark);
+      transition: width 0.3s ease;
+    }
+  }
+
+  &__toggle {
+    color: var(--black-color-dark);
+    font-size: var(--big-font-size);
+  }
+
+  &__list {
+    display: flex;
+    column-gap: 6.4rem;
+    align-items: center;
+
+    &__item {
+      position: relative;
+      text-align: center;
+    }
+  }
+
+  &__link {
+    display: flex;
+    flex-direction: column;
+    font-size: var(--small-font-size);
+    color: var(--black-color-light);
+    font-weight: var(--font-500);
+    transition: all 0.3s;
+  }
+
+  &__icon,
+  &__close,
+  &__toggle {
+    display: none;
+  }
+}
+
+.underlined {
+  display: inline-block;
+  position: relative;
+
+  &::after {
+    background: none repeat scroll 0 0 transparent;
+    content: "";
+    display: block;
+    width: 0;
+    height: 3px;
+    left: 0%;
+    bottom: 0;
+    position: absolute;
+    background: var(--black-color-dark);
+    transition: width 0.3s ease;
+  }
+
+  &:hover::after {
+    width: 100%;
+    left: 100;
+  }
+}
+
+/* CONTACT */
+.contact__button {
+  font-weight: var(--font-500);
+  padding: 0.75rem 1.5rem;
+  background: var(--black-color-dark);
+  color: var(--white-color);
+  border-radius: 2rem;
+  transition: all 0.3s;
+
+  &:hover {
+    background: #495057;
+  }
+}
+
+/********** LINKS **********/
+.active_link:hover,
+.nav__link:hover {
+  color: var(--black-color-dark);
+}
+
+/********** BREAKPOINTS *********/
+@media screen and (max-width: 1024px) {
+  .nav__list {
+    column-gap: 4rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    top: 0;
+    bottom: initial;
+    padding: 0;
+  }
+
+  .nav {
+    height: var(--header-height);
+    margin: 0 2.4rem;
+
+    &__logo {
+      justify-self: start;
+    }
+
+    &__toggle {
+      justify-self: end;
+    }
+
+    &__menu {
+      position: fixed;
+      top: -100%;
+      left: 0;
+      width: 100%;
+      background-color: var(--white-color);
+      padding: 6rem 4rem;
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+      border-radius: 1.5rem;
+      transition: all 0.3s;
+    }
+
+    &__list {
+      column-gap: 2.2rem;
+    }
+  }
+
+  /********** DISPLAYING MENU BAR ***********/
+  .show_menu {
+    top: 0;
+  }
+
+  .nav {
+    height: 10rem;
+    grid-template-columns: repeat(2, 1fr);
+
+    &__list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 4rem;
+      column-gap: 0;
+    }
+
+    &__link {
+      display: grid;
+      color: var(--black-color-dark);
+      font-size: var(--normal-small-font-size);
+    }
+
+    &__icon {
+      font-size: var(--normal-font-size);
+      margin-bottom: .8rem;
+    }
+
+    &__close {
+      position: absolute;
+      right: 1.3rem;
+      top: 1.3rem;
+      font-size: var(--big-font-size);
+      color: var(--black-color-dark);
+      cursor: pointer;
+    }
+
+    &__toggle {
+      left: 100%;
+      cursor: pointer;
+    }
+
+    &__icon,
+    &__close,
+    &__toggle {
+      display: block;
+    }
+  }
+
+  .underlined {
+    &::after {
+      height: 0;
+    }
+  }
+
+  .contact__button {
+    padding: 0;
+    background: none;
+    color: var(--black-color-dark);
+    border-radius: 0;
+    transition: all 0.3s;
+    font-size: var(--normal-small-font-size);
+
+    &:hover {
+      background: none;
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .nav {
+    &__toggle {
+      font-size: var(--normal-font-size);
+    }
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .nav {
+    &__menu {
+      padding: 6rem 2rem 5rem;
+    }
+
+    &__close {
+      font-size: 3.6rem;
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .nav {
+    height: 8rem;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .nav {
+    height: 7rem;
+
+    &__logo {
+      font-size: var(--normal-font-size);
+    }
+  }
+}

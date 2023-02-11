@@ -1,0 +1,39 @@
+.home__title {
+  font-size: var(--huge-font-size);
+  margin-bottom: 1.5vh;
+  align-self: start;
+  
+  & p {
+    letter-spacing: .15rem;
+  }
+  
+  &-late {
+    width: 7ch;
+    animation: typing 1.5s steps(7), blink-caret 0.3s step-end infinite alternate;
+    white-space: nowrap;
+    border-right: 3px solid;
+    overflow: hidden;
+  }
+  
+  & span {
+    font-size: var(--big-normal-font-size);
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes blink-caret {
+  50% {
+    border-color: transparent;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .home__title {
+    align-self: center;
+  }
+}

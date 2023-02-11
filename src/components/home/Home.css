@@ -1,0 +1,13 @@
+.home__container {
+    column-gap: 5vw;
+    margin: 10vh 0;
+    grid-template-columns: 2fr 3fr;
+}
+
+@media screen and (max-width:768px) {
+    .home__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
